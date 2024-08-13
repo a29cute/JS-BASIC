@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 메소드 3</title>
+</head>
+<body>
+<script>
+
+    const student = [
+        { "studentID" : "202400001",
+            "name" : "민지",
+            "major" : "컴퓨터과",
+        },
+        { "studentID" : "202400002",
+            "name" : "하니",
+            "major" : "경영과",
+        },
+        { "studentID" : "202400003",
+            "name" : "다니엘",
+            "major" : "행정과",
+        },
+        { "studentID" : "202400004",
+            "name" : "해린",
+            "major" : "교육과",
+        }
+    ];
+    // student 배열에서 학생 이름만 추출하여 새 배열 생성
+    const studentName = student.map(value => value['name']);
+    console.log("학생 이름 목록:", studentName);
+
+    // 1. 항목 추가
+    student.push({
+        "studentID" : "202400005",
+        "name" : "혜인",
+        "major" : "실용음악과"
+    });
+
+    // 2. map을 이용한 항목 변경
+    const updatedStudent = student.map(student => {
+        // 전공을 '과'-> '학과'로 변경
+        let newMajor = student.major.replace(/과$/, '학과');
+
+        // 이름에 '님'을 추가
+        let newName = `{student.name}$ 님`;
+
+        return {
+            ...student,  // 기존 학생 데이터 유지
+            major: newMajor, // 업데이트된 전공
+            name: newName    // 업데이트된 이름
+        };
+    });
+
+    console.log("변경된 학생 데이터:", updatedStudent);
+</script>
+</body>
+</html>
