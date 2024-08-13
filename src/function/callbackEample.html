@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수</title>
+</head>
+<body>
+<script>
+    // 문제1: 원의 넓이를 구하는 함수
+    // 입력: 반지름
+    // 함수의 형태: 함수 선언문, 함수 표현식
+
+    // 함수 선언문
+    function CircleArea(radius) {
+        return radius * radius * Math.PI;
+    }
+
+    // 함수 표현식
+    let circleArea = function (radius) {
+        return radius * radius * Math.PI;  // 수정: 원의 넓이 계산 시 반지름 제곱을 포함해야 함
+    };
+
+    // 문제2: 직사각형의 넓이를 구하는 함수
+    // 입력: 밑변, 높이
+    // 함수의 형태: 함수 선언문, 함수 표현식, 화살표 함수
+
+    // 함수 선언문
+    function Rectangular(width, height) {
+        return width * height;
+    }
+
+    // 함수 표현식
+    const rectangularEx = function (width, height) {
+        return width * height;
+    };
+
+    // 화살표 함수
+    const rectangularArrow = (width, height) => width * height;
+
+</script>
+</body>
+</html>
